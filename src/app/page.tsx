@@ -10,7 +10,7 @@ export default function Home() {
     <main className="w-full h-screen bg-bgGray flex flex-row">
       <section className="text-mainWhite w-full ">
         <div className="fixed py-8 px-8">
-          <Link href="/Home">
+          <Link href="/home">
             <Image src="/icon.svg" alt="logo" width={100} height={100} />
           </Link>
         </div>

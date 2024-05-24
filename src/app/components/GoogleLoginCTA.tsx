@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const GoogleLoginCTA = () => {
   const handleGoogleLogin = () => {
@@ -21,6 +22,7 @@ const GoogleLoginCTA = () => {
   };
 
   return (
+    <Link href = "/home">
     <button
       className="h-[57px] w-[264px] bg-mainWhite flex flex-col justify-center items-center rounded-md"
       onClick={handleGoogleLogin}
@@ -32,6 +34,7 @@ const GoogleLoginCTA = () => {
         </p>
       </div>
     </button>
+    </Link> 
   );
 };
 

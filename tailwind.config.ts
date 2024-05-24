@@ -39,6 +39,8 @@ const config: Config = {
         "mainDarkGreen": "#06CC80",
         "mainBlack": "#000000",
         "mainGray": "#666666",
+        "custom-light-green": 'rgba(206,255,236,1)',
+        'custom-green': 'rgba(6,204,128,1)',
       },
     },
     fontFamily: {
