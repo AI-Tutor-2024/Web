@@ -21,6 +21,7 @@ const Sidebar = () => {
                     </div>
                 </Link>
                 </div>
+                <Link href = "/classNotes">
                 <div className = "flex flex-col">
                     <div className="px-8 py-2 flex flex-row text-center gap-3">
                         <Image src="ic_side_all.svg" alt="logo" width={20} height={20} />
@@ -29,6 +30,7 @@ const Sidebar = () => {
                     <div className = "flex flex-">
                     </div>
                 </div>
+                </Link>
             </div>
         </div>
         {/* 로그아웃, 가이드보기 */}

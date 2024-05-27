@@ -3,6 +3,7 @@ import Sidebar from '@/app/components/layout/Sidebar'
 import Link from 'next/link';
 import Image from 'next/image';
 import SectionFolder from '@/app/components/section/SectionFolder';
+import CreateNewSection from '@/app/components/button/CTANewSection';
 
 const home = () => {
   return (
@@ -14,17 +15,15 @@ const home = () => {
                 오늘은 자기주도학습 <p className = "font-Pretendard font-semibold text-[57px] text-mainWhite inline-block"> 01일차</p>예요!
             </div>
             <div className = "border-t-2 h-[600px] border-r-2 border-l-2 border-[#929292]/[0.4] rounded-t-xl rounded-r-ml rounded-l-ml bg-[#242424]">
-                <Link href="/home">
-                <div className="mx-4 my-4 flex flex-row justify-between ">
+                <div className="mx-4 my-4 flex flex-row justify-between items-center ">
                     <div className = "flex flex-row gap-2 ">  
-                        <Image src="ic_side_all.svg" alt="logo" width={20} height={20} />
-                        <p className="text-white">수강과목</p>
+                        <Image src="ic_side_all.svg" alt="logo" width={24} height={24} />
+                        <p className="text-white text-[18px]">수강과목</p>
                     </div>
-                    <div className = "invert">
-                        <Image src="kebab-menu.svg" alt="logo" width={20} height={20} />
+                    <div>
+                        <CreateNewSection/>
                     </div>
                 </div>
-                </Link>
                 <div className="grid grid-cols-5 gap-3 px-4">
                     <SectionFolder/>
                     <SectionFolder/>
