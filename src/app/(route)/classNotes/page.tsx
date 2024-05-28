@@ -4,6 +4,7 @@ import Image from 'next/image';
 import CreateNewFile from '@/app/components/button/CTANewFile';
 import SectionInfo from '@/app/components/section/SectionInfo';
 import { notes, Note } from '@/app/constants/notes';
+import Link from 'next/link';
 
 interface NoteListProps {
   notes: Note[];
@@ -30,21 +31,16 @@ const classNotes: React.FC = () => {
                 텍스트로 확인할 수 있어요.
               </p>
             </div>
-            <div onClick={() => handleCreateNewFile()}>
+            <Link href="/createNotes">
               <CreateNewFile />
-            </div>
+            </Link>
           </div>
         )}
       </div>
     </div>
   );
-};
+}
 
-const handleCreateNewFile = () => {
-  // Handle the creation of a new file
-  console.log('Create New File');
-  // Add navigation or other logic here
-};
 
 const NoteList: React.FC<NoteListProps> = ({ notes }) => {
   return (

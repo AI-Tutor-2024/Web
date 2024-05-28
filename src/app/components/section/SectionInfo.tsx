@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import CreateNewFile from '../button/CTANewFile'
-
+import Link from 'next/link'
 const SectionInfo = () => {
   return (
     <div className = "flex flex-row justify-between px-8 py-6">
@@ -16,7 +16,9 @@ const SectionInfo = () => {
             </div>
         </div>
         <div className = "flex flex-row gap-3">
-            <CreateNewFile />
+             <Link href="/createNotes">
+              <CreateNewFile />
+            </Link>
             <Image src = "kebab-menu.svg" alt = "logo" width = {24} height = {24} className=' invert' />
         </div>
     </div>
