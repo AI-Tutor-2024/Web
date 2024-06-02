@@ -1,24 +1,47 @@
 "use client";
+
 import Lottie from "react-lottie-player";
 import lottieJson from "../../public/BouncingBall.json";
 import Image from "next/image";
 import Link from "next/link";
 import GoogleLoginCTA from "./components/GoogleLoginCTA";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+
+const Home = () => {
+  
+  const [isClient, setIsClient] = useState(false);
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsClient(typeof window !== 'undefined');
+  }, []);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/home");
+    }
+  }, [status]);
+
   return (
+
     <main className="w-full h-screen bg-bgGray flex flex-row">
-      <section className="text-mainWhite w-full ">
+      <section className="text-mainWhite w-full">
         <div className="fixed py-8 px-8">
           <Link href="/home">
             <Image src="/icon.svg" alt="logo" width={100} height={100} />
           </Link>
         </div>
-        <div className="h-full flex flex-col justify-center px-8 items-start ">
+        <div className="h-full flex flex-col justify-center px-8 items-start">
           <div className="flex flex-col relative justify-start items-start">
-            <div className="h-[70px] w-[70px] z-10 ml-[-20px]">
-              <Lottie loop animationData={lottieJson} play />
-            </div>
+            {isClient && (
+              <div className="h-[70px] w-[70px] z-10 ml-[-20px]">
+                <Lottie loop animationData={lottieJson} play />
+              </div>
+            )}
             <section className="overflow-hidden">
               <div className="animate-[textAnimation_8s_infinite]">
                 <p className="font-Pretendard font-normal text-[28px] block">
@@ -49,4 +72,7 @@ export default function Home() {
       </section>
     </main>
   );
-}
+};
+
+export default Home;
+

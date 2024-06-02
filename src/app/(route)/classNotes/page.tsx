@@ -1,3 +1,5 @@
+"use client";
+
 import Sidebar from '@/app/components/layout/Sidebar';
 import React from 'react';
 import Image from 'next/image';

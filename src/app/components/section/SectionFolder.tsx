@@ -1,7 +1,17 @@
+"use client";
+import { useState } from 'react';
 import React from 'react'
 import Image from 'next/image';
+import SectionModify from '../modal/SectionModify';
 
-const SectionFolder = () => {
+const SectionFolder: React.FC = () => {
+  const [showModify, setShowModify] = useState(false);
+
+  const handleMenuClick = () => {
+    setShowModify(!showModify);
+    console.log('clicked')
+  };
+
   return (
     <div>
         <div className = "relative">
@@ -16,12 +26,26 @@ const SectionFolder = () => {
                     김대원
                 </p>
               </div>
-              <div className = "mt-[4px]">
-                <Image src = "kebab-menu.svg" alt = "logo" width = {20} height = {20} />
-              </div>
+              <div className="mt-[4px]">
+              <Image
+                src="kebab-menu.svg"
+                alt="menu"
+                width={20}
+                height={20}
+                onClick={handleMenuClick}
+                className="cursor-pointer"
+              />
+            </div>
             </div>
           </div>
+          {showModify && (
+        <div className="absolute right-0 top-10 bg-[#343434] rounded-[8px] shadow-2xl">
+          <SectionModify />
         </div>
+        )}
+        </div>
+  
+      
     </div>
   )
 }

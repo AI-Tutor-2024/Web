@@ -8,6 +8,7 @@ const NewNoteForm = () => {
   const [form, setForm] = useState({
     folder: '',
     professor: '',
+    file: '',
   });
   const [file, setFile] = useState<File | null>(null);
 
@@ -29,6 +30,7 @@ const NewNoteForm = () => {
     const formData = new FormData();
     formData.append('folder', form.folder);
     formData.append('professor', form.professor);
+    formData.append('file', form.file);
     if (file) {
       formData.append('file', file);
     }
@@ -46,8 +48,8 @@ const NewNoteForm = () => {
         <label className="text-[15px] font-Pretendard font-normal text-mainWhite">노트 정보를 입력해 주세요</label>
         <input
           type="text"
-          name="folder"
-          value={form.folder}
+          name="file"
+          value={form.file}
           onChange={handleChange}
           placeholder="예) 캡스톤디자인 1주차"
           className="mt-1 block bg-bgGray text-mainWhite text-[22px] rounded-md py-1 pr-2 pl-0 "

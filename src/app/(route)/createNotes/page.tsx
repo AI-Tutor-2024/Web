@@ -8,7 +8,9 @@ const NewNotePage: React.FC = () => {
     <div className="flex flex-row bg-bgGray h-full">
       <Sidebar />
       <div className = "justify-between flex flex-col items-end w-full ">
+        {/* 새로운 노트만들기 */}
         <NewNoteForm />
+        {/* 노트만들기 버튼 */}
         <div className = "p-8">
           <CTANewNote />
         </div>
