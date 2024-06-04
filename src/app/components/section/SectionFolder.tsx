@@ -39,7 +39,7 @@ const SectionFolder: React.FC = () => {
             </div>
           </div>
           {showModify && (
-        <div className="absolute right-0 top-10 bg-[#343434] rounded-[8px] shadow-2xl">
+        <div className="absolute right-[10px] top-[174px] bg-[#343434] rounded-[8px] shadow-2xl">
           <SectionModify />
         </div>
         )}

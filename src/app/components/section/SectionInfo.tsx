@@ -11,6 +11,8 @@ const [showModifying, setShowModifying] = useState(false);
     const handleMenuClick = () => {
         setShowModifying(!showModifying);
         console.log('clicked')
+
+
     }
 return (
     <div className = "flex flex-row justify-between px-8 py-6">

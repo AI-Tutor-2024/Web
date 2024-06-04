@@ -62,7 +62,7 @@ const NewNoteForm = () => {
           name="folder"
           value={form.folder}
           onChange={handleChange}
-          className="mt-1  bg-[#252424] text-white  h-[34px] w-[150px] rounded-[20px] px-3"
+          className="mt-1  bg-[#252424] text-white h-[34px] w-[150px] rounded-[20px] px-3"
         />
       </div>
       <div className = "flex flex-row gap-9 ">

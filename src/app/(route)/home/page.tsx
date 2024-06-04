@@ -3,7 +3,7 @@ import Sidebar from '@/app/components/layout/Sidebar'
 import Link from 'next/link';
 import Image from 'next/image';
 import SectionFolder from '@/app/components/section/SectionFolder';
-import CreateNewSection from '@/app/components/button/CTANewSection';
+import CTANewSection from '@/app/components/button/CTANewSection';
 
 const home = () => {
   return (
@@ -21,7 +21,7 @@ const home = () => {
                         <p className="text-white text-[18px]">수강과목</p>
                     </div>
                     <div>
-                        <CreateNewSection/>
+                        <CTANewSection/>
                     </div>
                 </div>
                 <div className="grid grid-cols-5 gap-3 px-4">
