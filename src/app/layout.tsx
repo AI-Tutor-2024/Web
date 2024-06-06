@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import "./global.css";
 import { Inter } from "next/font/google";
 import ClientSessionProvider from "../app/components/ClientSessionProvider";
+import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

@@ -1,21 +1,19 @@
+"use client"
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import Image from "next/image";
+import { SectionModalProps } from '../../types/SectionModalProps';
 
-interface SectionModalProps {
-  onClose: () => void;
-}
-
-const SectionModal: React.FC<SectionModalProps> = ({ onClose }) => {
+const SectionModal = ({ onClose, addSection }: SectionModalProps) => {
   const [form, setForm] = useState({ subject: '', professor: '' });
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // 새로운 Section 생성 로직 추가
+    addSection({ subject: form.subject, professor: form.professor });
     onClose();
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   return (

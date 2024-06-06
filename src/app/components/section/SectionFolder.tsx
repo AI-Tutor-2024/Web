@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image';
 import SectionModify from '../modal/SectionModify';
 
-const SectionFolder: React.FC = () => {
+const SectionFolder: React.FC<{ subject: string; professor: string }> = ({ subject, professor }) => {
   const [showModify, setShowModify] = useState(false);
 
   const handleMenuClick = () => {
@@ -20,10 +20,10 @@ const SectionFolder: React.FC = () => {
             <div className = "flex justify-between">
               <div className = "flex flex-col">
                 <p className = "text-mainBlack font-Pretendard font-medium text-[18px] ">
-                    캡스톤디자인
+                    {subject}
                 </p>
                 <p className="text-[#1D1D1D]/[0.5] font-Pretendard font-normal text-[11px]">
-                    김대원
+                    {professor}
                 </p>
               </div>
               <div className="mt-[4px]">
@@ -44,10 +44,8 @@ const SectionFolder: React.FC = () => {
         </div>
         )}
         </div>
-  
-      
     </div>
   )
 }
 
-export default SectionFolder
+export default SectionFolder;

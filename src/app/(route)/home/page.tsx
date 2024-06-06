@@ -1,11 +1,17 @@
-import React from 'react'
-import Sidebar from '@/app/components/layout/Sidebar'
-import Link from 'next/link';
-import Image from 'next/image';
+"use client"
+import { useState } from 'react';
+import Image from "next/image"
+import Sidebar from "@/app/components/layout/Sidebar"
 import SectionFolder from '@/app/components/section/SectionFolder';
 import CTANewSection from '@/app/components/button/CTANewSection';
 
 const home = () => {
+  const [sections, setSections] = useState<{ subject: string; professor: string }[]>([]);
+
+  const addSection = (section: { subject: string; professor: string }) => {
+    setSections([...sections, section]);
+  };
+
   return (
     <div className = "flex flex-row bg-bgDeepGray ">
         <Sidebar />
@@ -21,15 +27,13 @@ const home = () => {
                         <p className="text-white text-[18px]">수강과목</p>
                     </div>
                     <div>
-                        <CTANewSection/>
+                        <CTANewSection addSection={(name: string, professor: string) => addSection({ subject: name, professor })}/>
                     </div>
                 </div>
                 <div className="grid grid-cols-5 gap-3 px-4">
-                    <SectionFolder/>
-                    <SectionFolder/>
-                    <SectionFolder/>
-                    <SectionFolder/>
-                    <SectionFolder/>
+                    {sections.map((section, index) => (
+                      <SectionFolder key={index} subject={section.subject} professor={section.professor} />
+                    ))}
                 </div>
             </div>
         </div>
@@ -37,4 +41,4 @@ const home = () => {
   )
 }
 
-export default home
+export default home;

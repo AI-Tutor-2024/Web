@@ -1,14 +1,12 @@
 "use client"
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SectionModal from '../modal/SectionModal';
+import { CTANewSectionProps } from '../../types/Section';
 
-const CreateNewSection = () => {
+const CTANewSection = ({ addSection }: CTANewSectionProps) => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleButtonClick = () => {
-    setShowModal(true);
-  };
+  const handleButtonClick = () => setShowModal(true);
 
   return (
     <>
@@ -17,9 +15,9 @@ const CreateNewSection = () => {
           <p className="font-Pretendard text-[18px] text-center">새 과목 만들기</p>
         </div>
       </button>
-      {showModal && <SectionModal onClose={() => setShowModal(false)} />}
+      {showModal && <SectionModal onClose={() => setShowModal(false)} addSection={({ subject, professor }) => addSection(subject, professor)} />}
     </>
   );
 };
 
-export default CreateNewSection;
+export default CTANewSection;
